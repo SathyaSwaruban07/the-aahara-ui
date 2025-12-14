@@ -1,0 +1,76 @@
+:root {
+  font-family: 'Quicksand', sans-serif; /* Elegant font for restaurant */
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #000000; /* Deep Black text */
+  background-color: #000000; /* Soft Off-White background */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #000000;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #000000; /* Lighter Saffron */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+  button {
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+  }
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #000000; /* Deep Black for headings */
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #000000; /* Saffron Gold */
+  color: #000000; /* Deep Black */
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+button:hover {
+  opacity: 0.8;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
