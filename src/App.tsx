@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from './store'
 import { setSearchTerm, addItem, decreaseItem, clearCart } from './store/cartSlice'
@@ -8,7 +8,7 @@ import Checkout from './Checkout'
 import HomePage from './HomePage'
 import OrderConfirmation from './OrderConfirmation'
 import ConfirmedOrders from './ConfirmedOrders'
-import { menuCategories, TrashIcon } from './menuData'
+import { menuCategories } from './menuData'
 
 
 const OrderManagement = () => {

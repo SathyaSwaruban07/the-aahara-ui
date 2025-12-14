@@ -9,7 +9,6 @@ const HomePage: React.FC = () => {
   const dispatch = useDispatch()
 
   const handleSelection = (type: 'Dine In' | 'Take Away') => {
-    const dineType = type === 'Dine In' ? 'dine-in' : 'take-away'
     dispatch(setDineType(type))
     navigate('/ordermanagement')
   }

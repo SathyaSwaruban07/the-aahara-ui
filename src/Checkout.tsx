@@ -2,18 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from './store'
-import { addItem, decreaseItem, setSearchTerm, addConfirmedOrder } from './store/cartSlice'
+import { addItem, decreaseItem, addConfirmedOrder } from './store/cartSlice'
 import './App.css'
-import { menuCategories, TrashIcon } from './menuData'
+import { menuCategories } from './menuData'
 
 const Checkout: React.FC = () => {
   const navigate = useNavigate()
-  const { cart, searchTerm, dineType } = useSelector((state: RootState) => state.cart)
+  const { cart, dineType } = useSelector((state: RootState) => state.cart)
   const dispatch = useDispatch()
   const [selectedPayment, setSelectedPayment] = useState('')
-  const [tokenNumber, setTokenNumber] = useState<number | null>(null)
-
-  const totalItems = Object.values(cart).reduce((sum, count) => sum + count, 0)
 
   const allItems = Object.values(menuCategories).flat();
   const getPrice = (name: string) => {
@@ -231,7 +228,6 @@ const Checkout: React.FC = () => {
                   onClick={() => {
                     if (selectedPayment !== '') {
                       const token = Math.floor(Math.random() * 10) + 1;
-                      setTokenNumber(token);
                       const items = cartItems.map(item => item.name.trim());
                       dispatch(addConfirmedOrder({
                         token,
